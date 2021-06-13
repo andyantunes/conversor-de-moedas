@@ -1,5 +1,5 @@
 <br />
-<div class="alert alert-danger" role="alert">
+<div *ngIf="possuiErro" class="alert alert-danger" role="alert">
   Erro obtendo dados. Tente novamente.
 </div>
 <div class="panel panel-success">
@@ -7,16 +7,22 @@
     Selecione a moeda a ser convertida
   </div>
   <div class="panel-body text-center">
-    <form class="form-inline">
-      <input type="text" name="valor" class="form-control text-right" placeholder="0" required />
-      <select name="moedaDe" class="form-control" required>
-        <option></option>
+    <form #conversaoForm="ngForm" class="form-inline">
+      <input [(ngModel)]="conversao.valor" type="text" name="valor" class="form-control text-right" placeholder="0"
+        required />
+      <select [(ngModel)]="conversao.moedaDe" name="moedaDe" class="form-control" required>
+        <option *ngFor="let moeda of moedas" [value]="moeda.sigla">
+          {{ moeda.sigla }} - {{ moeda.descricao }}
+        </option>
       </select>
       <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-      <select name="moedaPara" class="form-control" required>
-        <option></option>
+      <select [(ngModel)]="conversao.moedaPara" name="moedaPara" class="form-control" required>
+        <option *ngFor="let moeda of moedas" [value]="moeda.sigla">
+          {{ moeda.sigla }} - {{ moeda.descricao }}
+        </option>
       </select>
-      <input type="submit" value="Converter" class="btn btn-success" />
+      <input (click)="converter()" [disabled]="!conversaoForm.form.valid" data-toggle="modal"
+        data-target="#modalCotacao" type="submit" value="Converter" class="btn btn-success" />
     </form>
   </div>
 </div>
