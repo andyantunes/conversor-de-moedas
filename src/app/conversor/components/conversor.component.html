@@ -25,4 +25,7 @@
         data-target="#modalCotacao" type="submit" value="Converter" class="btn btn-success" />
     </form>
   </div>
+
+  <modal-cotacao [id]="'modalCotacao'" [conversaoResponse]="conversaoResponse" [conversao]="conversao"
+    (onConfirm)="init()"></modal-cotacao>
 </div>
