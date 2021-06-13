@@ -8,8 +8,8 @@
   </div>
   <div class="panel-body text-center">
     <form #conversaoForm="ngForm" class="form-inline">
-      <input [(ngModel)]="conversao.valor" type="text" name="valor" class="form-control text-right" placeholder="0"
-        required />
+      <input [(ngModel)]="conversao.valor" numero type="text" name="valor" class="form-control text-right"
+        placeholder="0" required />valor: {{conversao.valor}}
       <select [(ngModel)]="conversao.moedaDe" name="moedaDe" class="form-control" required>
         <option *ngFor="let moeda of moedas" [value]="moeda.sigla">
           {{ moeda.sigla }} - {{ moeda.descricao }}
