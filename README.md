@@ -20,7 +20,7 @@ This project is a simple currency converter
 
 ## Project's screenshots
 
-![Convert Screen](https://github.com/andyantunes/gerenciador-de-tarefas/blob/main/src/assets/prints/tasks%20list.png)
+![Convert Screen](https://github.com/andyantunes/conversor-de-moedas/blob/main/src/assets/screenshots/converter.png)
 
 ## Learnings
 
