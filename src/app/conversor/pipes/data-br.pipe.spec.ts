@@ -8,6 +8,6 @@ describe('DataBrPipe', () => {
 
   it('deve formatar a data 2017-03-31 para 31/03/2017', () => {
     const pipe = new DataBrPipe();
-    expect(pipe.transform('207-03-31')).toEqual('31/03/2017');
+    expect(pipe.transform('2017-03-31')).toEqual('31/03/2017');
   });
 });
